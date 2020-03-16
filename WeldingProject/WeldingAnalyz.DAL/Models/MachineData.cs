@@ -4,6 +4,7 @@ namespace WeldingAnalyz.DAL.Models
 {
     public class MachineData
     {
+        public int MachineDataId { get; set; }
         public int MachineId { get; set; }
         public Machine Machine { get; set; }
         public ICollection<Voltage> Voltages { get; set; }
