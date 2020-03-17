@@ -17,16 +17,16 @@ namespace WeldingAnalyz.Data.Context
 
         public WeldingContext(DbContextOptions<WeldingContext> option) : base(option)
         {
-            this.Database.Migrate();
+            Database.Migrate();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Worker>().HasKey(x => x.WorkerID);
-            modelBuilder.Entity<Foreman>().HasKey(x => x.ForemanId);
-            modelBuilder.Entity<Task>().HasKey(x => x.TaskId);
-            modelBuilder.Entity<TechnologicalMap>().HasKey(x => x.TechnologicalMapId);
-            modelBuilder.Entity<Machine>().HasKey(x => x.MachineId);
+            modelBuilder.Entity<Worker>().HasKey(x => x.Id);
+            modelBuilder.Entity<Foreman>().HasKey(x => x.Id);
+            modelBuilder.Entity<Task>().HasKey(x => x.Id);
+            modelBuilder.Entity<TechnologicalMap>().HasKey(x => x.Id);
+            modelBuilder.Entity<Machine>().HasKey(x => x.Id);
 
             modelBuilder.Entity<Voltage>()
                 .HasOne(x => x.MachineData)

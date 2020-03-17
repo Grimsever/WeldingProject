@@ -2,10 +2,8 @@
 
 namespace WeldingAnalyz.DAL.Models
 {
-    public class Foreman
+    public class Foreman:BaseEntity
     {
-        public int ForemanId { get; set; }
-        public string Name { get; set; }
         public ICollection<Worker> Workers { get; set; }
 
         public Foreman()

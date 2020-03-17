@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WeldingAnalyz.Data.Context;
 
 namespace WeldingAnalyz.Data.Migrations
 {
     [DbContext(typeof(WeldingContext))]
-    partial class WeldingContextModelSnapshot : ModelSnapshot
+    [Migration("20200317141437_ReWriteEntity")]
+    partial class ReWriteEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

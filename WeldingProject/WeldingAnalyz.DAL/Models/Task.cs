@@ -1,9 +1,8 @@
 ﻿
 namespace WeldingAnalyz.DAL.Models
 {
-    public class Task
+    public class Task:BaseEntity
     {
-        public int TaskId { get; set; }
         public int TechnologicalMapId { get; set; }
         public TechnologicalMap TechnologicalMap { get; set; }
         public int MachineId { get; set; }

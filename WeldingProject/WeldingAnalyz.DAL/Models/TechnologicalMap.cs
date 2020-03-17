@@ -1,8 +1,7 @@
 ﻿namespace WeldingAnalyz.DAL.Models
 {
-    public class TechnologicalMap
+    public class TechnologicalMap : BaseEntity
     {
-        public int TechnologicalMapId { get; set; }
         public double VoltageMin { get; set; }
         public double VoltageMax { get; set; }
         public double AmperageMin { get; set; }
