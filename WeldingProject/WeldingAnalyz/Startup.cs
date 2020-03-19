@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WeldingAnalyz.Data.Context;
+using WeldingAnalyz.Data.DI;
 
 namespace WeldingAnalyz
 {
@@ -27,7 +23,9 @@ namespace WeldingAnalyz
         {
             var connection = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<WeldingContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<WeldingContext>(options => options.UseSqlServer(connection), ServiceLifetime.Singleton);
+
+            services.RegisterDataComponents();
 
             services.AddControllersWithViews();
         }
