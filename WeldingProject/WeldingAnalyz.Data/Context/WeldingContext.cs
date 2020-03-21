@@ -18,6 +18,7 @@ namespace WeldingAnalyz.Data.Context
         public WeldingContext(DbContextOptions<WeldingContext> option) : base(option)
         {
             Database.Migrate();
+            Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
